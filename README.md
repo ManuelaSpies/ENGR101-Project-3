@@ -59,3 +59,64 @@ ENGR101 Project 3
     <td>Challenge finished. Do wiki discussion.</td>
   </tr>
 </table>
+
+# Michael's To Do List
+<table>
+  <tr>
+    <th>Deadline</th>
+    <th>To Do</th>
+  </tr>
+  <tr>
+    <td>03/06 Wed 5:00</td>
+    <td>- Do core code + put code up on GitHub
+    <br>- Comment on code so we can understand</td>
+  </tr>
+ </table>
+ 
+ # Harrison's To Do List
+ 
+<table>
+  <tr>
+    <th>Deadline</th>
+    <th>To Do</th>
+  </tr>
+  <tr>
+    <td>03/06 Wed 5:00</td>
+    <td>- Make GitHub + SFML & co work on your computer
+    <br>- Familiarise + understand Michael's Core code
+    <br>- maybe: suggest improvements, ... for Core</td>
+  </tr>
+ </table>
+ 
+ # Maurice's To Do List
+ 
+<table>
+  <tr>
+    <th>Deadline</th>
+    <th>To Do</th>
+  </tr>
+  <tr>
+    <td>03/06 Wed 5:00</td>
+    <td>- Make GitHub + SFML & co work on your computer
+    <br>- Familiarise + understand Michael's Core code
+    <br>- maybe: suggest improvements, ... for Core</td>
+  </tr>
+ </table>
+ 
+ # Ella's To Do List
+ 
+<table>
+  <tr>
+    <th>Deadline</th>
+    <th>To Do</th>
+  </tr>
+  <tr>
+    <td>03/06 Wed 5:00</td>
+    <td>- Make GitHub + SFML & co work on your computer
+    <br>- Familiarise + understand Michael's Core code
+    <br>- maybe: suggest improvements, ... for Core
+    <br>- set up plan/outlines (into read.me for now -- probs move to own folder later?)
+    <br>- clarify questions with lecturers
+    <br>- log call Sun 31/05</td>
+  </tr>
+ </table>
