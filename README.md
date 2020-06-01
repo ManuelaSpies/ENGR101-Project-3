@@ -1,7 +1,19 @@
 # ENGR101-Project-3
 ENGR101 Project 3 
 
+## Group information
+### Members
+<em>Everybody will try to work on the code to their best ability.</em>
+* Manuela Spies (ManuelaSpies), project manager (organising team meetings, reporting regularly on progress)
+* Michael Levy (crypticane), software architect (writing core code and extending functionality)
+* Harrison Blackburn Churcher (harrison-bc), software writing, testing & documentation (debugging software and committing to git, writing test cases and documenting performance against milestones)
+* Maurice Nolan (vimorra(?)), software writing, testing & documentation (debugging software and committing to git, writing test cases and documenting performance against milestones)
 
+<strong>Team name: </strong> ???
+<br><strong>Communication: </strong> Discord server
+
+
+# Timeline
 <table>
   <tr>
     <th>Date</th>
