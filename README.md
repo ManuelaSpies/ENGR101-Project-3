@@ -71,7 +71,8 @@ ENGR101 Project 3
   <tr>
     <td>03/06 Wed 5:00</td>
     <td>- Do core code + put code up on GitHub
-    <br>- Comment on code so we can understand</td>
+    <br>- Comment on code so we can understand
+    <br>- start looking into completion</td>
   </tr>
  </table>
  
@@ -86,7 +87,9 @@ ENGR101 Project 3
     <td>03/06 Wed 5:00</td>
     <td>- Make GitHub + SFML & co work on your computer
     <br>- Familiarise + understand Michael's Core code
-    <br>- maybe: suggest improvements, ... for Core</td>
+    <br>- maybe: suggest improvements, ... for Core
+    <br>- test + document Core code
+    <br>- once testing is done, join Michael in completion</td>
   </tr>
  </table>
  
@@ -101,7 +104,8 @@ ENGR101 Project 3
     <td>03/06 Wed 5:00</td>
     <td>- Make GitHub + SFML & co work on your computer
     <br>- Familiarise + understand Michael's Core code
-    <br>- maybe: suggest improvements, ... for Core</td>
+    <br>- maybe: suggest improvements, ... for Core
+    <br>- once stuff works: join Harrison in testing & Completion</td>
   </tr>
  </table>
  
@@ -119,6 +123,7 @@ ENGR101 Project 3
     <br>- maybe: suggest improvements, ... for Core
     <br>- set up plan/outlines (into read.me for now -- probs move to own folder later?)
     <br>- clarify questions with lecturers
-    <br>- log call Sun 31/05</td>
+    <br>- log call Sun 31/05
+    <br>- once stuff runs: testing + completion</td>
   </tr>
  </table>
