@@ -9,8 +9,8 @@ ENGR101 Project 3
 * Harrison Blackburn Churcher (harrison-bc), software writing, testing & documentation (debugging software and committing to git, writing test cases and documenting performance against milestones)
 * Maurice Nolan (vimorra(?)), software writing, testing & documentation (debugging software and committing to git, writing test cases and documenting performance against milestones)
 
-<strong>Team name: </strong> ???
-<br><strong>Communication: </strong> Discord server
+<strong>Team name - Team 16: 🤔Hmmm🤔</strong> ???
+<br><strong>Communication - </strong> Discord server
 
 
 # Timeline
