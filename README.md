@@ -134,6 +134,11 @@ ENGR101 Project 3
     <td>- Test program (Core)
     <br>- whatever comes out of the questions with the lecturers</td>
   </tr>
+    
+  <tr>
+    <td>07/06 Sun 4:00</td>
+    <td>- Test program (Completion)</td>
+  </tr>
  </table>
  
  # Ella's To Do List
@@ -158,5 +163,12 @@ ENGR101 Project 3
     <td>- Test program (Core)
     <br>- confirm questions with lecturers
       <br>- whatever comes out of the questions with the lecturers</td>
+  </tr>
+  
+  <tr>
+    <td>10/06 Sun 5:00</td>
+    <td>- Test program (Completion)
+    <br>- confirm questions with lecturers
+      <br>- write report</td>
   </tr>
  </table>
