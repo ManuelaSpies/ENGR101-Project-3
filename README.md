@@ -13,7 +13,7 @@ ENGR101 Project 3
 <br><strong>Communication - </strong> Discord server
 
 
-# Timeline
+# Plan
 <table>
   <tr>
     <th>Date</th>
@@ -88,11 +88,15 @@ ENGR101 Project 3
   </tr>
   
   <tr>
-    <td>07/06 Sun 4:00</td>
+    <td>07/06 Wed 4:00</td>
   <td>none</td>
   </tr>
  </table>
- 
+   <tr>
+    <td>14/06 Sun 4:00</td>
+  <td>Challenge code</td>
+  </tr>
+ </table>
  # Harrison's To Do List
  
 <table>
@@ -134,10 +138,16 @@ ENGR101 Project 3
     <td>- Test program (Core)
     <br>- whatever comes out of the questions with the lecturers</td>
   </tr>
+      
+  <tr>
+    <td>07/06 Wed 4:00</td>
+    <td>- Test program (Completion)</td>
+  </tr>
+  
     
   <tr>
-    <td>07/06 Sun 4:00</td>
-    <td>- Test program (Completion)</td>
+    <td>14/06 Sun 4:00</td>
+    <td>Individual log & any testing/... that comes up</td>
   </tr>
  </table>
  
@@ -166,9 +176,15 @@ ENGR101 Project 3
   </tr>
   
   <tr>
-    <td>10/06 Sun 5:00</td>
+    <td>10/06 Wed 5:00</td>
     <td>- Test program (Completion)
     <br>- confirm questions with lecturers
       <br>- write report</td>
+  </tr>
+  
+  
+  <tr>
+    <td>14/06 Sun 4:00</td>
+    <td>Individual log & notes for group report
   </tr>
  </table>
