@@ -35,7 +35,7 @@ void moveRobot(Result result)
   setMotors(vLeft, vRight);
 }
 // process the image from the camera
-Result processImage()
+void processImage()
 {
   // create a result structure to hold values
   Result result;
