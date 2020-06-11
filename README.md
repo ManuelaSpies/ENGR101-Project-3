@@ -68,7 +68,7 @@ ENGR101 Project 3
   </tr>
   
   <tr>
-    <td>124/06 Wed</td>
+    <td>24/06 Wed</td>
   <td><span style="color: red">REPORT DUE</span></td>
     <td>Report & all submitted and done! :D</td>
   </tr>
@@ -91,7 +91,7 @@ ENGR101 Project 3
     <td>07/06 Wed 4:00</td>
   <td>none</td>
   </tr>
- </table>
+
    <tr>
     <td>14/06 Sun 4:00</td>
   <td>Challenge code</td>
