@@ -17,7 +17,9 @@ void moveRobot(Result result)
   // if the robot isn't lost, dv is error/2
   if (result.lost == 0)
   {
+	  
     dv = result.error / 2;
+
     // if the robot is lost, dv is large and positive so it turns to the left
     // it needs to turn to the left since if it is lost it's either completely lost the line
     // or the line is to the left of it, which it doesn't check for.
@@ -43,7 +45,7 @@ void processImage()
   int width = cameraView.width;
   int height = cameraView.height;
   // get the middle row
-  int row = width / 2;
+  int row = height / 2;
   // get right and left columns for forks
   int columnLeft = 0;
   // loop forever
@@ -95,7 +97,6 @@ void processImage()
       }
       else
       {
-        std::cout << "lost" << std::endl;
         lost = 1;
       }
     }
@@ -110,8 +111,55 @@ void processImage()
     result.error = whiteIndex - width / 2;
     result.lost = lost;
     // call moverobot
-    moveRobot(result);
+	moveRobot(result);
   }
+}
+void processChallenge(){
+	// create a result structure to hold values
+	Result result;
+	takePicture();
+	int width = cameraView.width;
+	int height = cameraView.height;
+
+	int row = 0;
+	while(1){
+		takePicture();
+		// by default robot is not lost
+		int lost = 0;
+		bool left = false;
+		bool right = false;
+		
+		for (int column = 0; column < width; column++)
+		 {
+			int red = (int)get_pixel(cameraView, row, column, 0);
+			if (red > 250)
+			{
+			  if(column<width/2){
+				  std::cout << "red is left" << std::endl;
+				  left = true;
+				}else if(column>width/2){
+					std::cout << "red is right" << std::endl;
+					right = true;
+					break;
+				}
+			}
+		}
+		if(!left){
+			result.error = -1*width/4;
+			std::cout << "Turn Left" << std::endl;
+		}else if(!right){
+			result.error = width/4;
+			std::cout << "Turn Right" << std::endl;
+		}else if(left && right){
+			std::cout << "We Good" << std::endl;
+			result.error = 0;
+		}else{
+			std::cout << "Lost" << std::endl;
+			lost = 1;
+		}
+		result.lost = 0;
+		moveRobot(result);
+	}
 }
 int main()
 {
@@ -119,5 +167,14 @@ int main()
   {
     std::cout << " Error initializing robot" << std::endl;
   }
-  processImage();
+  bool x;
+  std::cout<<"Core/Completion (0) or challenge(1)?"<<std::endl;
+  std::cin>>x;
+	if(x == 0){
+		processImage();
+	}else if(x==1){
+		processChallenge();
+	}else{
+		std::cout<<"invalid choice";
+	}
 }
