@@ -3,7 +3,7 @@ Project Libraries:
   -First you need to download and install the SFML project libraries at https://www.sfml-dev.org/download/sfml/2.5.1/.
   -After you have installed the libraries for the project you then have to unzip the file to the folder of your choice.
 Project Installation:
-  -Download the file with the starting code at https://ecs.wgtn.ac.nz/foswiki/pub/Courses/ENGR101_2020T1/Project3/AVC_Linux.zip and unzip    the the file.
+  -Download the file with the code at https://github.com/ManuelaSpies/ENGR101-Project-3/tree/master/Robot.
   -Inside the file there are two folders(AVC_server and AVC-robot).
   -Open the file makefile(inside the AVC-server) using Geany.
   -In the top line in makefile you must replace the address with the address to the folder where your SFML folder is.
