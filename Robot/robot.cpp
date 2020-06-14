@@ -122,8 +122,9 @@ void processChallenge(){
 	int height = cameraView.height;
 	int row = 0;
 	while(1){
+		// move the viewpoint slowly back as it needs to be at the front at the start and at the back for the turns.
 		if(row<height-4){
-			row = row+4;S
+			row = row+4;
 		}
 		takePicture();
 		// by default robot is not lost
