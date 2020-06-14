@@ -27,7 +27,7 @@ void moveRobot(Result result)
   }
   else if (result.lost == 1)
   {
-    dv = 50;
+    dv = 35;
   }
   // set left motor to default + dv
   double vLeft = v + dv;
@@ -120,44 +120,43 @@ void processChallenge(){
 	takePicture();
 	int width = cameraView.width;
 	int height = cameraView.height;
-
 	int row = 0;
 	while(1){
+		if(row<height-4){
+			row = row+4;S
+		}
 		takePicture();
 		// by default robot is not lost
 		int lost = 0;
-		bool left = false;
-		bool right = false;
-		
+		bool turnleft = true;
+		bool turnright = true;
 		for (int column = 0; column < width; column++)
 		 {
 			int red = (int)get_pixel(cameraView, row, column, 0);
 			if (red > 250)
 			{
-			  if(column<width/2){
-				  std::cout << "red is left" << std::endl;
-				  left = true;
-				}else if(column>width/2){
-					std::cout << "red is right" << std::endl;
-					right = true;
-					break;
+				//if there's a wall on the left, don't turn left
+				if(column<width/2){
+					turnleft = false;
+				}
+				// if there's a wall on the right, don't turn right
+				if (column>width/2){
+					turnright = false;
 				}
 			}
 		}
-		if(!left){
-			result.error = -1*width/4;
-			std::cout << "Turn Left" << std::endl;
-		}else if(!right){
-			result.error = width/4;
-			std::cout << "Turn Right" << std::endl;
-		}else if(left && right){
-			std::cout << "We Good" << std::endl;
+		// if robot doesn't need to turn left or right, everything's fine
+		if((!turnleft)&&(!turnright)){
 			result.error = 0;
+		// if robot needs to turn, I set error to + or - width/16, because it's a nice number.
+		}else if(turnright){
+			result.error = width/8;
+		}else if(turnleft){
+			result.error = -1*width/8;
 		}else{
-			std::cout << "Lost" << std::endl;
 			lost = 1;
 		}
-		result.lost = 0;
+		result.lost = lost;
 		moveRobot(result);
 	}
 }
