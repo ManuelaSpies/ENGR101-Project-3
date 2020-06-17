@@ -18,14 +18,11 @@ void moveRobot(Result result)
   if (result.lost == 0)
   {
     dv = result.error / 2;
-    // if the robot is lost, dv is large and positive so it turns to the left
-    // it needs to turn to the left since if it is lost it's either completely lost the line
-    // or the line is to the left of it, which it doesn't check for.
-    // Both of these scenarios are fixed by turning left until you find the line again
   }
   else if (result.lost == 1)
   {
-    dv = 50;
+    // if the robot is lost, dv is large and positive so it turns to the left
+    dv = 35;
   }
   // set left motor to default + dv
   double vLeft = v + dv;
@@ -43,7 +40,7 @@ void processImage()
   int width = cameraView.width;
   int height = cameraView.height;
   // get the middle row
-  int row = width / 2;
+  int row = height / 2;
   // get right and left columns for forks
   int columnLeft = 0;
   // loop forever
@@ -95,7 +92,6 @@ void processImage()
       }
       else
       {
-        std::cout << "lost" << std::endl;
         lost = 1;
       }
     }
@@ -113,11 +109,129 @@ void processImage()
     moveRobot(result);
   }
 }
+// method to make sure the robot can see the walls at the start
+int adjust(bool turnleft, bool turnright)
+{
+  int error;
+  if ((!turnleft) && (!turnright))
+  {
+    error = 0;
+  }
+  else if (turnleft)
+  {
+    error = -15;
+  }
+  else if (turnright)
+  {
+    error = 15;
+  }
+  return error;
+}
+void processChallenge()
+{
+  // create a result structure to hold values
+  Result result;
+  takePicture();
+  int width = cameraView.width;
+  int height = cameraView.height;
+  int row = 0;
+  // counter used to wait before turning
+  int rightcount = 0;
+  // counter to keep the robot from doing 180s
+  int leftcount = 0;
+  bool turned;
+  while (1)
+  {
+    // move the viewpoint slowly back as it needs to be at the front at the start and at the back for the turns.
+    if (row < height * 3 / 4)
+    {
+      row = row + 4;
+    }
+    takePicture();
+    // by default robot is not lost
+    int lost = 0;
+    // booleans for decision-making
+    bool turnleft = true;
+    bool turnright = true;
+    bool middle = false;
+    for (int column = 0; column < width; column++)
+    {
+      int red = (int)get_pixel(cameraView, row, column, 0);
+      if (red > 250)
+      {
+        // if there's a wall on the right, don't turn right
+        if (column > width / 2)
+        {
+          turnright = false;
+        }
+        // If there's a wall in the middle, turn left
+        else if (column == width / 2)
+        {
+          middle = true;
+          //this is only still here for the adjustment at the start
+        }
+        else if (column < width / 2)
+        {
+          turnleft = false;
+        }
+      }
+    }
+    // adjust robot for the first bit (using the row number is just convenient)
+    if (row < height / 2)
+    {
+      result.error = adjust(turnleft, turnright);
+      moveRobot(result);
+    }
+    else
+    {
+      // if robot doesn't need to turn left or right, everything's fine
+      result.error = 0;
+      leftcount--;
+      // if the robot can turn right for 7 loops, turn 90 degrees (more or less)
+      if (turnright)
+      {
+        rightcount++;
+        if (rightcount > 7)
+        {
+          result.error = 169;
+          rightcount = 0;
+        }
+      }
+      // if the robot can't turn right but there's a wall in front, turn left
+      // but not too soon after it already turned  left
+      else if (middle)
+      {
+        if (leftcount < 0)
+        {
+          result.error = -169;
+          leftcount = 2;
+        }
+      }
+      moveRobot(result);
+    }
+    result.lost = lost;
+  }
+}
+
 int main()
 {
   if (initClientRobot() != 0)
   {
     std::cout << " Error initializing robot" << std::endl;
   }
-  processImage();
+  bool x;
+  std::cout << "Core/Completion (0) or challenge(1)?" << std::endl;
+  std::cin >> x;
+  if (x == 0)
+  {
+    processImage();
+  }
+  else if (x == 1)
+  {
+    processChallenge();
+  }
+  else
+  {
+    std::cout << "invalid choice";
+  }
 }
