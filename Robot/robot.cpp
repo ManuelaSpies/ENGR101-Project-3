@@ -219,7 +219,7 @@ int main()
   {
     std::cout << " Error initializing robot" << std::endl;
   }
-  bool x;
+  char x;
   std::cout << "Core/Completion (0) or challenge(1)?" << std::endl;
   std::cin >> x;
   if (x == 0)
