@@ -97,7 +97,7 @@ void processImage()
     }
     else
     {
-      // if a right turn is available, tell the robot that the line is 3/4 to the right
+      // if a left turn is available, tell the robot that the line is 1/4 from the left
       whiteIndex = width / 4;
     }
     // set the error to the index minus the width over 2
@@ -168,8 +168,8 @@ void processChallenge()
         else if (column == width / 2)
         {
           middle = true;
-          //this is only still here for the adjustment at the start
         }
+        // required for the adjustment at the start
         else if (column < width / 2)
         {
           turnleft = false;
