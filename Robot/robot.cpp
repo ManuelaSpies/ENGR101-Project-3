@@ -222,11 +222,11 @@ int main()
   char x;
   std::cout << "Core/Completion (0) or challenge(1)?" << std::endl;
   std::cin >> x;
-  if (x == 0)
+  if (x == '0')
   {
     processImage();
   }
-  else if (x == 1)
+  else if (x == '1')
   {
     processChallenge();
   }
