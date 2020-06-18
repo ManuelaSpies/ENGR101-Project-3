@@ -68,7 +68,7 @@ void processImage()
         whiteIndexCount += 1;
       }
     }
-    // check if a right turn is available
+    // check if a left turn is available
     if (whiteIndexCount == 0)
     {
       // loop across the middle row
@@ -76,7 +76,7 @@ void processImage()
       {
         // get the whiteness of each pixel
         int white = (int)get_pixel(cameraView, row, column, 3);
-        // if whiteness is greater than 200, it's white (bad way of doing it)
+        // if whiteness is greater than 200, it's white
         if (white > 200)
         {
           whiteIndexTotal += column;
@@ -184,7 +184,7 @@ void processChallenge()
     }
     else
     {
-      // if robot doesn't need to turn left or right, everything's fine
+      // if robot doesn't need to turn left or right, there is no error
       result.error = 0;
       leftcount--;
       // if the robot can turn right for 7 loops, turn 90 degrees (more or less)
@@ -198,7 +198,7 @@ void processChallenge()
         }
       }
       // if the robot can't turn right but there's a wall in front, turn left
-      // but not too soon after it already turned  left
+      // but not too soon after it already turned left
       else if (middle)
       {
         if (leftcount < 0)
