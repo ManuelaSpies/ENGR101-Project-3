@@ -1,11 +1,12 @@
 * **Install Instructions(for Linux)**
 1. **Project Libraries:**
  * -First you need to download and install the SFML project libraries at https://www.sfml-dev.org/download/sfml/2.5.1/.
+ * -Make sure that you download the correct version(for Linux) https://www.sfml-dev.org/files/SFML-2.5.1-linux-gcc-64-bit.tar.gz  
  * -After you have installed the libraries for the project you then have to unzip the file to the folder of your choice.
 2. **Project Installation:**
  * -Download the repository with our code at https://github.com/ManuelaSpies/ENGR101-Project-3
  * -Inside the file there are two folders(server and robot).
- * -Open the file makefile(inside the server folder) using Geany.
+ * -Open the file makefile(inside the server folder) using Geany or if you have no C compiler then you can use a text  editor.
  * -In the top line in makefile you must replace the address with the address to the folder where your SFML folder is.
  * -Just double check to see if all the lines starting with g++ have a tab in front of them.
  * -Press the "make" button in the geany menu in server.cpp to make(compile and build) the server(maze).
